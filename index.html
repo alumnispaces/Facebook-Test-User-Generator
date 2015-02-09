@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Facebook Test User Generator by Alumni Spaces</title>
+    <style type="text/css">
+		.indent {
+			padding-left: 2.5em;
+		}
+		form#results {
+			display: none;
+		}
+		input[type="text"] {
+			width: 300px;
+		}
+		.spinner {
+		  margin: 0 auto;
+		  width: 50px;
+		  height: 30px;
+		  text-align: center;
+		  font-size: 10px;
+		}
+		
+		.spinner > div {
+		  background-color: #333;
+		  height: 100%;
+		  width: 6px;
+		  display: inline-block;
+		  
+		  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+		  animation: stretchdelay 1.2s infinite ease-in-out;
+		}
+		
+		.spinner .rect2 {
+		  -webkit-animation-delay: -1.1s;
+		  animation-delay: -1.1s;
+		}
+		
+		.spinner .rect3 {
+		  -webkit-animation-delay: -1.0s;
+		  animation-delay: -1.0s;
+		}
+		
+		.spinner .rect4 {
+		  -webkit-animation-delay: -0.9s;
+		  animation-delay: -0.9s;
+		}
+		
+		.spinner .rect5 {
+		  -webkit-animation-delay: -0.8s;
+		  animation-delay: -0.8s;
+		}
+		
+		@-webkit-keyframes stretchdelay {
+		  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+		  20% { -webkit-transform: scaleY(1.0) }
+		}
+		
+		@keyframes stretchdelay {
+		  0%, 40%, 100% { 
+		    transform: scaleY(0.4);
+		    -webkit-transform: scaleY(0.4);
+		  }  20% { 
+		    transform: scaleY(1.0);
+		    -webkit-transform: scaleY(1.0);
+		  }
+		}
+	</style>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Facebook Test User Generator</h1>
+        <h2>Create a fake Facebook user with login credentials to use in testing your Facebook integration.</h2>
+        <a href="https://github.com/alumnispaces/Create-Facebook-Test-User" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+	         <div class="container">
+		          <h3>
+		<a id="make-a-user" class="anchor" href="#make-a-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Make-a-User 3000.</h3>
+		
+		<p>Using Facebook's <code>/accounts/test-users/</code> API method, you can create fake Facebook login credentials for testing your Facebook app or integration on your website.  Read more about the API endpoint <a href="https://developers.facebook.com/docs/graph-api/reference/v2.2/test-user"> in the Facebook docs</a>.</p>
+		
+		<p>To use this generator, you'll need:
+			<ul class="indent">
+				<li>Facebook App ID</li>
+				<li><a href="https://developers.facebook.com/tools/explorer/">App Access Token</a></li>
+			</ul>
+			
+			<p>If you haven't made a Facebook App yet, <a href="https://developers.facebook.com/docs/opengraph/getting-started#create-app">start here</a>.</p>
+		</p>
+		
+		<h3>
+		<a id="generator" class="anchor" href="#generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate It</h3>
+		<p>
+			
+			<form id="makefb" class="pure-form pure-form-aligned" action="" method="POST">
+					 <fieldset>
+					 	<div class="pure-control-group">
+							<label for="access_token">App Access Token</label>
+							<input type="text" id="access_token" name="access_token"/>	
+						</div>
+						<div class="pure-control-group">
+							<label for="app_id">App ID</label>
+							<input type="text" id="app_id" name="app_id" />	
+						</div>
+						<div class="pure-controls">							
+							<input name="submit" id="create_person" type="button" class="button pure-button pure-button-primary" value="It's ALIVE!"/>
+						</div>		
+					 </fieldset>
+				</form>
+				<h3><a id="useit" class="anchor" href="#useit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use It</h3>
+					<form id="results">
+						<div id="spinit">
+							<div class="spinner">
+								<div class="rect1"></div>
+								<div class="rect2"></div>
+								<div class="rect3"></div>
+								<div class="rect4"></div>
+							</div>
+						</div>
+						<div id="fbdata" class="pure-form pure-form-aligned"></div>
+					</form>
+		</p>
+		<br />
+		<p>Made by @acafourek for @alumnispaces.</p>
+	         </div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/alumnispaces/Create-Facebook-Test-User/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/alumnispaces/Create-Facebook-Test-User/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/alumnispaces/Create-Facebook-Test-User"></a> is maintained by <a href="https://github.com/alumnispaces">alumnispaces</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-16122526-25");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+		  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			<script type='text/javascript'>
+				$( function() { 
+					$( "#makefb" ).sisyphus();
+				} );
+				
+			    /* attach a submit handler to the form */
+			    $("#create_person").on('click', (function(event) {
+				
+			      /* stop form from submitting normally */
+			      event.preventDefault();
+			      $('#results').fadeIn();	
+					
+					var name = $('input#name').val();
+					var pass = $('input#password').val();
+					var token = $('input#access_token').val();
+					var appid = $('input#app_id').val();
+			
+					$.ajax({
+					     type : "post",
+					     dataType : "json",
+					     url : 'https://graph.facebook.com/'+appid+'/accounts/test-users?name='+name+'&access_token='+token,
+					     success: function(response) {
+						     console.log(response);
+						     $('#spinit').fadeOut();
+							 $('#fbdata').html('<fieldset><div class="pure-control-group"><label for="test_email">Email:</label> <input name="test_email" type="text" readonly value="'+response.email+'" /></div><div class="pure-control-group"><label for="test_pass">Password: </label> <input name="test_pass" type="text" readonly value="'+response.password+'" /></fieldset></div>');
+					     },
+					     error: function(response){
+						     $('#spinit').fadeOut();
+						     var errText = JSON.parse(response.responseText);
+						     $('#fbdata').html('Ooops, something there wasn\'t right. This is what Facebook had to say: <p class="indent"><b>Message: </b>'+errText.error.message+' <br /><b>Type: </b>+'+errText.error.type+'</p>');
+						     console.log(response);
+					     }
+					  });
+
+			    }));
+			</script>
+	    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="./js/sisyphus.min.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-43446646-5', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+  </body>
+</html>
