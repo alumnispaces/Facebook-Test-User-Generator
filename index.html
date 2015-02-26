@@ -151,18 +151,8 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-16122526-25");
-            pageTracker._trackPageview();
-            } catch(err) {}
-    </script>
 		  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 			<script type='text/javascript'>
 				$( function() { 
 					$( "#makefb" ).sisyphus();
@@ -175,11 +165,11 @@
 			      event.preventDefault();
 			      $('#results').fadeIn();	
 					
-					var name = $('input#name').val();
+					var name = encodeURIComponent(faker.name.findName());
 					var pass = $('input#password').val();
 					var token = $('input#access_token').val();
 					var appid = $('input#app_id').val();
-			
+			console.log('https://graph.facebook.com/'+appid+'/accounts/test-users?name='+name+'&access_token='+token);
 					$.ajax({
 					     type : "post",
 					     dataType : "json",
@@ -200,9 +190,9 @@
 			    }));
 			</script>
 	    <!-- Latest compiled and minified JavaScript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script src="./js/sisyphus.min.js"></script>
+	<script src="./js/faker.min.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
